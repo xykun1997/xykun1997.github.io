@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>shell入门——基本运算符 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="shell基本运算符类别介绍 算术运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符  几点注意 在进行求值操作时要使用expr 表达式和运算符之间必须要有空格 算数表达式要完全被&#96;&#96;包含12a&#x3D;&#96;expr 2 + 2&#96;echo &quot;两数之和为 : $a&quot;  算数运算符   运算符 说明 使用举例    + 加法 expr $a + $b   - 减法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell入门——基本运算符">
+<meta property="og:url" content="http://example.com/2018/03/11/shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="shell基本运算符类别介绍 算术运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符  几点注意 在进行求值操作时要使用expr 表达式和运算符之间必须要有空格 算数表达式要完全被&#96;&#96;包含12a&#x3D;&#96;expr 2 + 2&#96;echo &quot;两数之和为 : $a&quot;  算数运算符   运算符 说明 使用举例    + 加法 expr $a + $b   - 减法">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-03-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-12-11T10:27:43.958Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-shell基本运算符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/03/11/shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time class="dt-published" datetime="2018-03-10T16:00:00.000Z" itemprop="datePublished">2018-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      shell入门——基本运算符
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="shell基本运算符"><a href="#shell基本运算符" class="headerlink" title="shell基本运算符"></a>shell基本运算符</h2><h3 id="类别介绍"><a href="#类别介绍" class="headerlink" title="类别介绍"></a>类别介绍</h3><ul>
+<li>算术运算符</li>
+<li>关系运算符</li>
+<li>布尔运算符</li>
+<li>字符串运算符</li>
+<li>文件测试运算符</li>
+</ul>
+<h3 id="几点注意"><a href="#几点注意" class="headerlink" title="几点注意"></a>几点注意</h3><ul>
+<li>在进行求值操作时要使用expr</li>
+<li>表达式和运算符之间必须要有空格</li>
+<li>算数表达式要完全被&#96;&#96;包含<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=`expr 2 + 2`</span><br><span class="line">echo &quot;两数之和为 : $a&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a><strong>算数运算符</strong></h3><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+<th align="center">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加法</td>
+<td align="center"><code>expr $a + $b</code></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减法</td>
+<td align="center"><code>expr $a - $b</code></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘法</td>
+<td align="center"><code>expr $a \* $b</code></td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除法</td>
+<td align="center"><code>expr $a / $b</code></td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+<td align="center"><code>expr $a % $b</code></td>
+</tr>
+<tr>
+<td align="center">&#x3D;</td>
+<td align="center">赋值</td>
+<td align="center">a &#x3D; $b 将变量b的值赋给a</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;</td>
+<td align="center">判相等，相同为true</td>
+<td align="center">[ $a &#x3D;&#x3D; $b ]</td>
+</tr>
+<tr>
+<td align="center">!&#x3D;</td>
+<td align="center">判不等，不等为true</td>
+<td align="center">[ $a !&#x3D; $b ]</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>乘号(*)前边必须加反斜杠(\)转义才能实现乘法运算；</li>
+<li>条件表达式要放在方括号之间，并且要有空格，例如: [$a&#x3D;&#x3D;$b] 是错误的，必须写成 [ $a &#x3D;&#x3D; $b ]。<br><strong>实例</strong>：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">a=10</span><br><span class="line">b=20</span><br><span class="line"></span><br><span class="line">val=`expr $a + $b`</span><br><span class="line">echo &quot;a + b : $val&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a - $b`</span><br><span class="line">echo &quot;a - b : $val&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $a \* $b`</span><br><span class="line">echo &quot;a * b : $val&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $b / $a`</span><br><span class="line">echo &quot;b / a : $val&quot;</span><br><span class="line"></span><br><span class="line">val=`expr $b % $a`</span><br><span class="line">echo &quot;b % a : $val&quot;</span><br><span class="line"></span><br><span class="line">if [ $a == $b ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;a 等于 b&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;a 不等于 b&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+输出结果<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a + b : 30</span><br><span class="line">a - b : -10</span><br><span class="line">a * b : 200</span><br><span class="line">b / a : 2</span><br><span class="line">b % a : 0</span><br><span class="line">a 不等于 b</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a><strong>关系运算符</strong></h3><p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字<br>假设a&#x3D;20; b&#x3D;30.</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+<th align="center">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-eq</td>
+<td align="center">两个变量相等 返回 true</td>
+<td align="center">[ $a -eq $b ] 返回false</td>
+</tr>
+<tr>
+<td align="center">-ne</td>
+<td align="center">两个变量不相等 返回 true</td>
+<td align="center">[ $a -ne $b ] 返回true</td>
+</tr>
+<tr>
+<td align="center">-gt</td>
+<td align="center">左变量 &gt; 右变量  返回true</td>
+<td align="center">[ $a -gt $b ] 返回false</td>
+</tr>
+<tr>
+<td align="center">-lt</td>
+<td align="center">左变量 &lt; 右变量  返回true</td>
+<td align="center">[ $a -lt $b ] 返回true</td>
+</tr>
+<tr>
+<td align="center">-ge</td>
+<td align="center">左变量 &gt;&#x3D; 右变量  返回true</td>
+<td align="center">[ $a -ge $b ] 返回false</td>
+</tr>
+<tr>
+<td align="center">-le</td>
+<td align="center">左变量 &lt;&#x3D; 右变量  返回true</td>
+<td align="center">[ $a -le $b ] 返回true</td>
+</tr>
+<tr>
+<td align="center"><strong>注意</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">表达式要放在方括号之间，并且要有空格，[ $a -gt $b ]。</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a><strong>字符串运算符</strong></h3><p>假设a&#x3D;“zyk”;b&#x3D;“xy”.</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+<th align="center">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td align="center">两个字符串相等 返回true</td>
+<td align="center">[ $a &#x3D; $b ] 返回false</td>
+</tr>
+<tr>
+<td align="center">!&#x3D;</td>
+<td align="center">两个变量不相等 返回 true</td>
+<td align="center">[ $a ！&#x3D; $b ] 返回true</td>
+</tr>
+<tr>
+<td align="center">z</td>
+<td align="center">字符串长度为0  返回true</td>
+<td align="center">[ -z $a ] 返回false</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td align="center">字符串长度不为0  返回true</td>
+<td align="center">[ -n $a ] 返回true</td>
+</tr>
+<tr>
+<td align="center">str</td>
+<td align="center">字符串不为空  返回true</td>
+<td align="center">[ $a ] 返回true</td>
+</tr>
+</tbody></table>
+<h3 id="文件测试运算符"><a href="#文件测试运算符" class="headerlink" title="文件测试运算符"></a><strong>文件测试运算符</strong></h3><p>file&#x3D;”&#x2F;shell-script&#x2F;sh02.sh”</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+<th align="center">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-b</td>
+<td align="center">文件是块设备文件 返回true</td>
+<td align="center">[ -b $file ]返回false</td>
+</tr>
+<tr>
+<td align="center">-c</td>
+<td align="center">文件是字符设备文件 返回 true</td>
+<td align="center">[ -c $file ]返回false</td>
+</tr>
+<tr>
+<td align="center">-d</td>
+<td align="center">文件是目录文件 返回true</td>
+<td align="center">[ -d $file ]返回false</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">文件是普通文件(不是目录也不是设备文件)返回 true</td>
+<td align="center">[ -f $file ]返回true</td>
+</tr>
+<tr>
+<td align="center">-g</td>
+<td align="center">文件设置了<a target="_blank" rel="noopener" href="http://blog.csdn.net/turkeyzhou/article/details/2408222">SGID位</a>  返回true</td>
+<td align="center">[ -g $file ]返回false</td>
+</tr>
+<tr>
+<td align="center">-k</td>
+<td align="center">文件设置了<a target="_blank" rel="noopener" href="http://blog.csdn.net/baoendemao/article/details/52847641">粘着位</a>  返回true</td>
+<td align="center">[ -k $file]返回false</td>
+</tr>
+<tr>
+<td align="center">-p</td>
+<td align="center">文件是有名管道 返回true</td>
+<td align="center">[ -p $file ]返回false</td>
+</tr>
+<tr>
+<td align="center">-u</td>
+<td align="center">文件设置了<a target="_blank" rel="noopener" href="http://blog.csdn.net/turkeyzhou/article/details/2408222">SUID位</a>  返回true</td>
+<td align="center">[ -u $file ]返回false</td>
+</tr>
+<tr>
+<td align="center">-r</td>
+<td align="center">文件可读  返回true</td>
+<td align="center">[ -r $file ]返回 true</td>
+</tr>
+<tr>
+<td align="center">-w</td>
+<td align="center">文件可写  返回true</td>
+<td align="center">[ -w $file ] 返回true</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td align="center">文件可执行  返回true</td>
+<td align="center">[ -x $file ] 返回true</td>
+</tr>
+<tr>
+<td align="center">-s</td>
+<td align="center">文件不为空  返回true</td>
+<td align="center">[ -s $file ] 返回true</td>
+</tr>
+<tr>
+<td align="center">-e</td>
+<td align="center">文件存在  返回true</td>
+<td align="center">[ -e $file ] 返回true</td>
+</tr>
+</tbody></table>
+<p> <strong>用法实例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">file=&quot;/shell-script/sh02.sh&quot;</span><br><span class="line">if [ -r $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件可读&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件不可读&quot;</span><br><span class="line">fi</span><br><span class="line">if [ -w $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件可写&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件不可写&quot;</span><br><span class="line">fi</span><br><span class="line">if [ -x $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件可执行&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件不可执行&quot;</span><br><span class="line">fi</span><br><span class="line">if [ -f $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件为普通文件&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件为特殊文件&quot;</span><br><span class="line">fi</span><br><span class="line">if [ -d $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件是个目录&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件不是个目录&quot;</span><br><span class="line">fi</span><br><span class="line">if [ -s $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件不为空&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件为空&quot;</span><br><span class="line">fi</span><br><span class="line">if [ -e $file ]</span><br><span class="line">then</span><br><span class="line">   echo &quot;文件存在&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;文件不存在&quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h3 id="shell注释的用法"><a href="#shell注释的用法" class="headerlink" title="shell注释的用法"></a><strong>shell注释的用法</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#!bin/bash</span><br><span class="line"># echo &quot;我是单行注释，你看不到我&quot;</span><br><span class="line"></span><br><span class="line">:&lt;&lt;!</span><br><span class="line">echo &quot;我是多行注释1，你看不到我&quot;</span><br><span class="line">echo &quot;我是多行注释2，你看不到我&quot;</span><br><span class="line">!</span><br><span class="line"></span><br><span class="line"># 其实!可以随意命名，只要别跟中间的注释内容相同即可。当Shell脚本执行遇到:&lt;&lt;!，就不执行脚本了，一直到再碰!后才重新开始执行脚本。如果忘记!或者写错(由于已经不执行脚本了，所以即使写错也不会报错)，则:&lt;&lt;!之后的脚步将都不会执行。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/03/11/shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/" data-id="clav22xop0005mwvs3dfzf2vq" data-title="shell入门——基本运算符" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/13/shell%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          shell入门——参数的传递和数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/09/shell%E5%8F%98%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">shell入门——变量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/24/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/13/shell%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">shell入门——参数的传递和数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/11/shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/">shell入门——基本运算符</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/09/shell%E5%8F%98%E9%87%8F/">shell入门——变量</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/26/--%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80--/">交换基础(1)--交换机</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

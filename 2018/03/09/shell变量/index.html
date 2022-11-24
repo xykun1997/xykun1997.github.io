@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>shell入门——变量 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="shell变量1. 使用变量：加美元符12your_name&#x3D;&quot;zhangyk&quot;echo $your_name #花括号作用是识别变量边界 2. 只读变量readonly12Url&#x3D;&quot;http:&#x2F;&#x2F;www.zhangyukun.top&quot;readonly Url  #这样定义后变量的值不能被改变 3. 删除变量1unset your_name  #变量被删除后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell入门——变量">
+<meta property="og:url" content="http://example.com/2018/03/09/shell%E5%8F%98%E9%87%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="shell变量1. 使用变量：加美元符12your_name&#x3D;&quot;zhangyk&quot;echo $your_name #花括号作用是识别变量边界 2. 只读变量readonly12Url&#x3D;&quot;http:&#x2F;&#x2F;www.zhangyukun.top&quot;readonly Url  #这样定义后变量的值不能被改变 3. 删除变量1unset your_name  #变量被删除后">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-03-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2018-03-08T14:23:29.919Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-shell变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/03/09/shell%E5%8F%98%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2018-03-08T16:00:00.000Z" itemprop="datePublished">2018-03-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      shell入门——变量
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="shell变量"><a href="#shell变量" class="headerlink" title="shell变量"></a>shell变量</h2><h3 id="1-使用变量：加美元符"><a href="#1-使用变量：加美元符" class="headerlink" title="1. 使用变量：加美元符"></a>1. 使用变量：加美元符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">your_name=&quot;zhangyk&quot;</span><br><span class="line">echo $your_name #花括号作用是识别变量边界</span><br></pre></td></tr></table></figure>
+<h3 id="2-只读变量readonly"><a href="#2-只读变量readonly" class="headerlink" title="2. 只读变量readonly"></a>2. 只读变量readonly</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Url=&quot;http://www.zhangyukun.top&quot;</span><br><span class="line">readonly Url  #这样定义后变量的值不能被改变</span><br></pre></td></tr></table></figure>
+<h3 id="3-删除变量"><a href="#3-删除变量" class="headerlink" title="3. 删除变量"></a>3. 删除变量</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unset your_name  #变量被删除后不能再次使用，不能删除readonly变量</span><br></pre></td></tr></table></figure>
+<h3 id="4-将命令的结果赋值给变量"><a href="#4-将命令的结果赋值给变量" class="headerlink" title="4.将命令的结果赋值给变量"></a>4.将命令的结果赋值给变量</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">variable=`command`  #注意是反引号不是单引号</span><br><span class="line">variable=$(command)  #两种方式皆可，但第一种容易混淆。</span><br><span class="line">ex:</span><br><span class="line">log=$(cat log.txt)</span><br><span class="line">echo $log</span><br><span class="line">[2018-03-8 20:53:22] 张昱昆正在学习Shell基础</span><br></pre></td></tr></table></figure>
+<h3 id="5-三种变量类型"><a href="#5-三种变量类型" class="headerlink" title="5.三种变量类型"></a>5.三种变量类型</h3><ul>
+<li>局部变量：局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</li>
+<li>环境变量：所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。（类似c的全局变量）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export $your_name</span><br></pre></td></tr></table></figure></li>
+<li>shell变量：shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</li>
+</ul>
+<h2 id="Shell-字符串"><a href="#Shell-字符串" class="headerlink" title="Shell 字符串"></a>Shell 字符串</h2><p>字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号。</p>
+<h3 id="1-单引号和双引号的区别"><a href="#1-单引号和双引号的区别" class="headerlink" title="1. 单引号和双引号的区别"></a>1. 单引号和双引号的区别</h3><p>以单引号**’ ‘**包围变量的值时，单引号里面是什么就输出什么，即使内容中有变量和命令（命令需要反引起来）也会把它们原样输出。这种方式比较适合定义显示纯字符串的情况，即不希望解析变量、命令等的场景。</p>
+<p>以双引号**” “**包围变量的值时，输出时会先解析里面的变量和命令，而不是把双引号中的变量名和命令原样输出。这种方式比较适合字符串中附带有变量和命令并且想将其解析后再输出的变量定义。</p>
+<p>如下代码说明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">url=&quot;http://zhangyukun.top&quot;</span><br><span class="line">website1=&#x27;kun&#x27;s blog：$&#123;url&#125;&#x27;</span><br><span class="line">website2=&quot;kun&#x27;s blog：$&#123;url&#125;&quot;</span><br><span class="line">echo $website1</span><br><span class="line">echo $&#123;website2&#125;  </span><br></pre></td></tr></table></figure>
+<p>运行结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kun&#x27;s blog：$&#123;url&#125;</span><br><span class="line">kun&#x27;s blog：http://zhangyukun.top </span><br></pre></td></tr></table></figure>
+<h3 id="2-获取字符串长度"><a href="#2-获取字符串长度" class="headerlink" title="2. 获取字符串长度"></a>2. 获取字符串长度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str=“abc,def,ghi,abcjkl”  </span><br><span class="line">echo $&#123;#str&#125; #在花括号中给变量名前加#号</span><br><span class="line">#运行结果</span><br><span class="line">18</span><br></pre></td></tr></table></figure>
+<h3 id="3-字符串的截取"><a href="#3-字符串的截取" class="headerlink" title="3. 字符串的截取"></a>3. 字符串的截取</h3><h4 id="格式：-str-position"><a href="#格式：-str-position" class="headerlink" title="格式：${str:position}"></a>格式：${str:position}</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从位置position+1开始截取  </span><br><span class="line">echo $&#123;str:5&#125;   #从第5+1个元素开始截取</span><br><span class="line">#运行结果：ef,ghi,abcjkl </span><br></pre></td></tr></table></figure>
+<h4 id="格式：-str-start-length"><a href="#格式：-str-start-length" class="headerlink" title="格式：${str:start:length}"></a>格式：${str:start:length}</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从start+1开始截取长度为length的字符串  </span><br><span class="line">echo $&#123;str:5：8&#125;   #从第5+1个元素开始截取长度8</span><br><span class="line">#运行结果：ef,ghi,a </span><br></pre></td></tr></table></figure>
+<h4 id="格式：-str-substring-或-str-substring"><a href="#格式：-str-substring-或-str-substring" class="headerlink" title="格式：${str#*substring}或${str##*substring}"></a>格式：${str#*substring}或${str##*substring}</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从str开头开始删除到最近的substring包括substring</span><br><span class="line">echo $&#123;str#*c&#125;   #删除 开始~c *为通配符</span><br><span class="line">#运行结果：,def,ghi,abcjkl </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从str开头开始删除到最远的substring包括substring</span><br><span class="line">echo $&#123;str##*c&#125;   #删除 开始~c *为通配符</span><br><span class="line">#运行结果：jkl</span><br></pre></td></tr></table></figure>
+<h4 id="格式-str-substring-或-str-substring"><a href="#格式-str-substring-或-str-substring" class="headerlink" title="格式${str%substring*}或${str%%substring*}"></a>格式${str%substring*}或${str%%substring*}</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从str结尾开始删除到最近的substring包括substring</span><br><span class="line">echo $&#123;str%c*&#125;   #删除 c~结尾 *为通配符</span><br><span class="line">#运行结果：abc,def,ghi,ab </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从str结尾开始删除到最远的substring包括substring</span><br><span class="line">echo $&#123;str%%c*&#125;   #删除 c~结尾 *为通配符</span><br><span class="line">#运行结果：ab</span><br></pre></td></tr></table></figure>
+<p>总结<br> #、## 表示从左边开始删除。一个 # 表示从左边删除到第一个指定的字符；两个 # 表示从左边删除到最后一个指定的字符。<br>%、%% 表示从右边开始删除。一个 % 表示从右边删除到第一个指定的字符；两个 % 表示从左边删除到最后一个指定的字符。<br>删除包括了指定的字符本身。</p>
+<h3 id="4-字符串的替换"><a href="#4-字符串的替换" class="headerlink" title="4. 字符串的替换"></a>4. 字符串的替换</h3><h4 id="格式-str-x2F-substring-x2F-replace或-str-x2F-x2F-substring-x2F-replace"><a href="#格式-str-x2F-substring-x2F-replace或-str-x2F-x2F-substring-x2F-replace" class="headerlink" title="格式 ${str&#x2F;substring&#x2F;replace或${str&#x2F;&#x2F;substring&#x2F;replace}"></a>格式 ${str&#x2F;substring&#x2F;replace或${str&#x2F;&#x2F;substring&#x2F;replace}</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#用TEST替换字符串中第一个abc  </span><br><span class="line">echo $&#123;str/abc/TEST&#125;  </span><br><span class="line">#运行结果：TEST,def,ghi,abcjkl  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#用TEST替换字符串所有的abc  </span><br><span class="line">echo $&#123;str//abc/TEST&#125;  </span><br><span class="line">#运行结果：TEST,def,ghi,TESTjkl  </span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#从str开头匹配，用TEST替换最长的a*c  </span><br><span class="line">echo $&#123;str/#*c/TEST&#125;  </span><br><span class="line">#TESTjkl </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/03/09/shell%E5%8F%98%E9%87%8F/" data-id="clav22xon0004mwvsh60qe86c" data-title="shell入门——变量" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/11/shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          shell入门——基本运算符
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/26/--%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80--/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">交换基础(1)--交换机</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/24/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/13/shell%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/">shell入门——参数的传递和数组</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/11/shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6/">shell入门——基本运算符</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/09/shell%E5%8F%98%E9%87%8F/">shell入门——变量</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/26/--%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80--/">交换基础(1)--交换机</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
